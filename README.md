@@ -1,6 +1,6 @@
 # Verpatch
 
-A simple node wrapper for (Verpatch)[http://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows]
+A simple node wrapper for [Verpatch](http://www.codeproject.com/Articles/37133/Simple-Version-Resource-Tool-for-Windows)
 
 ## Getting started
 
