@@ -1,0 +1,19 @@
+{
+  "name": "verpatch",
+  "version": "0.0.0",
+  "description": "Node wrapper for verpatch (https://ddverpatch.codeplex.com/)",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.4"
+  }
+}
