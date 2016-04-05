@@ -15,6 +15,21 @@ A simple node wrapper for [Verpatch](http://www.codeproject.com/Articles/37133/S
 ```
 var verpatch = require('verpatch');
 
-verpatch('./path/to/executable', { version: '1.0.0', publisher: 'publisher'});
+verpatch('./path/to/executable', '1.0.0', { publisher: 'publisher'});
 
 ```
+
+## Options
+
+### Standard Options
+
+* `desc` - description
+* `pb` - private build
+* `company` - company
+* `(c)` - copyright
+* `product` - product name
+* `pv` - product version
+
+### Other options
+
+You can store any other key/value you wish

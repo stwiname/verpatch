@@ -14,8 +14,12 @@ describe('verpatch', function(){
     return expect(verpatch()).to.be.rejected;
   });
 
-  it('throws an error when not passed options', () => {
+  it('throws an error when not passed version', () => {
     return expect(verpatch('./path/to/exe')).to.be.rejected;
+  });
+
+  it('throws an error when not passed options', () => {
+    return expect(verpatch('./path/to/exe', '0.0.0')).to.be.rejected;
   });
 
   it('should be able to modify version information of an exe', () => {
@@ -30,9 +34,9 @@ describe('verpatch', function(){
     .then(() => {
       return verpatch(
           executablePath
+        , '1.0.0'
         , {
-            version: '1.0.0'
-          , desc:    'description'
+            desc:    'description'
           , pb:      'built by' //Private Build
           , pv:      '1.0.0' //Product Version
           , company: 'company name'
@@ -45,28 +49,4 @@ describe('verpatch', function(){
       return fs.unlinkAsync(executablePath);
     });
   });
-
-  it('should fail trying to set an invalid option', () => {
-    const executablePath = path.resolve(__dirname, '../bin/verpatch_copy.exe');
-
-    return new bluebird((resolve, reject) => {
-      fs.createReadStream(path.resolve(__dirname,'../bin/verpatch.exe'))
-        .pipe(fs.createWriteStream(executablePath))
-        .on('error', reject)
-        .on('finish', resolve);
-    })
-    .then(() => {
-      expect(verpatch(
-          executablePath
-        , {
-            invalid: 'invalid option'
-        })).to.be.rejected;
-    })
-    .then(() => {
-      //Cleanup copy
-      return fs.unlinkAsync(executablePath);
-    });
-  });
-
-
 });
