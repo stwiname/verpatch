@@ -1,0 +1,5 @@
+**/*
+
+!bin/verpatch.exe
+!lib/**/*.js
+!test/**/*.js
